@@ -68,6 +68,8 @@ print(data['ST_Slope'].unique())
 
 ### General Correlation of Data
 data_corr = data.corr()
+data_heat = sns.heatmap(data_corr, cmap = 'viridis')
+
 
 ### Linear Regressions
 #LPM - OLS Model
@@ -118,24 +120,3 @@ figure3 = sm.graphics.plot_regress_exog(lpm_result3, 'RestingBP')
 figure3.tight_layout(pad=1.0)
 
 figure4 = sm.graphics.plot_leverage_resid2(lpm_result3, 'RestingBP')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
